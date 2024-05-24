@@ -20,7 +20,7 @@ export const verifyToken=(req,res,next)=>{
 export const verifyUser=(req,res,next)=>{
    
   
-    verifyToken(req,res,()=>{
+    verifyToken(req,res,next,()=>{
         if(req.body.userId|| req.user.role === 'admin'){
             next();
         }else{
